@@ -1,7 +1,7 @@
 from instaloader import Instaloader, Profile
-from core import *  # Assuming core is a custom module you have created
+from core import *
 
-# Initialize Instaloader
+
 L = Instaloader()
 
 USERNAME = "s4m_s3pio1"
@@ -34,7 +34,7 @@ def dump_followers():
         print("{}'s followers: ".format(profile.username))
         for follower in profile.get_followers():
             followers.append(follower.username)  # Correct usage
-        data[USERNAME] = {}  # Initialize user's dictionary if not existing
+        data[USERNAME] = {}
         data[USERNAME]["followers"] = followers
         print(followers)
     else:
