@@ -67,7 +67,15 @@ def dont_follow():
     else:
         print("Username not found!!")
 
+def get_followers(user):
+    profile = Profile.from_username(L.context, user)
+    followers = [follower.username for follower in profile.get_followers()]
+    return followers
 
-dump_following()
-dump_followers()
-dont_follow()
+
+def get_following(user):
+    profile = Profile.from_username(L.context, user)
+    following = [followee.username for followee in profile.get_followees()]
+    return following
+
+
